@@ -1,5 +1,5 @@
 {% set name = "srt" %}
-{% set version = "3.5.2" %}
+{% set version = "3.5.3" %}
 
 package:
   name: {{ name|lower }}
@@ -7,14 +7,14 @@ package:
 
 source:
   url: https://pypi.io/packages/source/{{ name[0] }}/{{ name }}/srt-{{ version }}.tar.gz
-  sha256: 7aa4ad5ce4126d3f53b3e7bc4edaa86653d0378bf1c0b1ab8c59f5ab41384450
+  sha256: 4884315043a4f0740fd1f878ed6caa376ac06d70e135f306a6dc44632eed0cc0
 
 build:
   script: {{ PYTHON }} -m pip install . -vv
-  number: 6
+  number: 0
 
 requirements:
-  build: 
+  build:
     - cross-python_{{ target_platform }}     # [build_platform != target_platform]
     - python
     - pip
